@@ -1,0 +1,161 @@
+Code	Vertaling	CQL
+000	N(sing)	pos=N, feat.getal=ev
+001	N(sing,forme)	pos=N, feat.getal=ev, feat.form=-e
+002	N(sing,forms)	pos=N, feat.getal=ev, feat.form=-s/-th
+003	N(sing,formt)	pos=N, feat.getal=ev, feat.form=-t
+004	N(sing,formn)	pos=N, feat.getal=ev, feat.form=-n
+005	N(sing,formr)	pos=N, feat.getal=ev, feat.form=-r/-re
+006	N(sing,formao)	pos=N, feat.getal=ev, feat.form=-a
+008	N(sing,formrest)	pos=N, feat.getal=ev
+010	N(plu,formbase)	pos=N, feat.getal=mv
+011	N(plu,forme)	pos=N, feat.getal=mv, feat.form=-e
+012	N(plu,forms)	pos=N, feat.getal=mv, feat.form=-s/-th
+014	N(plu,formn)	pos=N, feat.getal=mv, feat.form=-n
+015	N(plu,formr)	pos=N, feat.getal=mv, feat.form=-r/-re
+016	N(plu,formao)	pos=N, feat.getal=mv, feat.form=-a
+018	N(plu,formrest)	pos=N, feat.getal=mv
+020	N(sing,prop)	pos=N, feat.ntype=eigen
+021	N(sing,prop,forme)	pos=N, feat.ntype=eigen, feat.form=-e
+022	N(sing,prop,forms)	pos=N, feat.ntype=eigen, feat.form=-s/-th
+024	N(sing,prop,formn)	pos=N, feat.ntype=eigen, feat.form=-n
+025	N(sing,prop,formr)	pos=N, feat.ntype=eigen, feat.form=-r/-re
+026	N(sing,prop,formao)	pos=N, feat.ntype=eigen, feat.form=-a
+028	N(sing,prop,formrest)	pos=N, feat.ntype=eigen
+031	N(plu,prop,forme)	pos=N, feat.getal=mv, feat.ntype=eigen, feat.form=-e
+034	N(plu,prop,formn	pos=N, feat.getal=mv, feat.ntype=eigen, feat.form=-n
+100	Adj()	pos=ADJ, feat.getal=ev
+101	Adj(forme)	pos=ADJ, feat.getal=ev, feat.form=-e
+102	Adj(forms)	pos=ADJ, feat.getal=ev, feat.form=-s/-th
+104	Adj(formn)	pos=ADJ, feat.getal=ev, feat.form=-n
+105	Adj(formr)	pos=ADJ, feat.getal=ev, feat.form=-r/-re
+200	V(fin,pres,lex)	pos=WW, feat.pvtijd=tgw
+201	V(fin,pres,lex,forme)	pos=WW, feat.pvtijd=tgw, feat.form=-e
+203	V(fin,pres,lex,formt)	pos=WW, feat.pvtijd=tgw, feat.form=-t
+204	V(fin,pres,lex,formn)	pos=WW, feat.pvtijd=tgw, feat.form=-n
+207	V(fin,pres,lex,formnt)	pos=WW, feat.pvtijd=tgw
+210	V(fin,pres,aux_cop)	pos=WW, feat.pvtijd=tgw
+211	V(fin,pres,aux_cop,forme)	pos=WW, feat.pvtijd=tgw, feat.form=-e
+212	V(fin,pres,aux_cop,forms)	pos=WW, feat.pvtijd=tgw, feat.form=-s/-th
+213	V(fin,pres,aux_cop,formt)	pos=WW, feat.pvtijd=tgw, feat.form=-t
+214	V(fin,pres,aux_cop,formn)	pos=WW, feat.pvtijd=tgw, feat.form=-n
+217	V(fin,pres,aux_cop,formnt)	pos=WW, feat.pvtijd=tgw
+219	V(uncodeable)	pos=WW, feat.pvtijd=unkown
+220	V(fin,past,lex)	pos=WW, feat.pvtijd=verl
+221	V(fin,past,lex,forme)	pos=WW, feat.pvtijd=verl, feat.form=-e
+223	V(fin,past,lex,formt)	pos=WW, feat.pvtijd=verl, feat.form=-t
+224	V(fin,past,lex,formn)	pos=WW, feat.pvtijd=verl, feat.form=-n
+227	V(fin,past,lex,formnt)	pos=WW, feat.pvtijd=verl
+230	V(fin,past,aux_cop)	pos=WW, feat.pvtijd=verl
+231	V(fin,past,aux_cop,forme)	pos=WW, feat.pvtijd=verl, feat.form=-e
+233	V(fin,past,aux_cop,formt)	pos=WW, feat.pvtijd=verl, feat.form=-t
+234	V(fin,past,aux_cop,formn)	pos=WW, feat.pvtijd=verl, feat.form=-n
+237	V(fin,past,aux_cop,formnt)	pos=WW, feat.pvtijd=verl
+240	V(imp)	pos=WW
+243	V(imp,formt)	pos=WW, feat.form=-t
+250	V(infin)	pos=WW, feat.wvorm=inf
+251	V(infin,forme)	pos=WW, feat.wvorm=inf, feat.form=-e
+252	V(infin,forms)	pos=WW, feat.wvorm=inf, feat.form=-s/-th
+254	V(infin,formn)	pos=WW, feat.wvorm=inf, feat.form=-n
+271	V(participle,pres,forme)	pos=WW, feat.form=-e
+272	V(participle,pres,forms)	pos=WW, feat.form=-s/-th
+273	V(participle,past,formt)	pos=WW, feat.form=-t
+274	V(participle,past,formn)	pos=WW, feat.form=-n
+275	V(participle,past,rest)	pos=WW, feat.form=-r/-re
+285	V(prtcl)	pos=WW, feat.form=-r/-re
+300	Num(card)	pos=TW, feat.numtype=hoofd
+301	Num(card,forme)	pos=TW, feat.numtype=hoofd, feat.form=-e
+302	Num(card,forms)	pos=TW, feat.numtype=hoofd, feat.form=-s/-th
+304	Num(card,formn)	pos=TW, feat.numtype=hoofd, feat.form=-n
+305	Num(card,formr)	pos=TW, feat.numtype=hoofd, feat.form=-r/-re
+310	Num(ord)	pos=TW, feat.numtype=rang
+311	Num(ord,forme)	pos=TW, feat.numtype=rang, feat.form=-e
+312	Num(ord,forms)	pos=TW, feat.numtype=rang, feat.form=-s/-th
+314	Num(ord,formn)	pos=TW, feat.numtype=rang, feat.form=-n
+315	Num(ord,formr)	pos=TW, feat.numtype=rang, feat.form=-r/-re
+320	Num(indef)	pos=TW
+321	Num(indef,forme)	pos=TW, feat.form=-e
+322	Num(indef,forms)	pos=TW, feat.form=-s/-th
+324	Num(indef,formn)	pos=TW, feat.form=-n
+325	Num(indef,formr)	pos=TW, feat.form=-r/-re
+401	Pron(pers,1,sing)	pos=VNW, feat.getal=ev, feat.persoon=1
+402	Pron(pers,2,sing)	pos=VNW, feat.getal=ev, feat.persoon=2
+403	Pron(pers,3,sing)	pos=VNW, feat.getal=ev, feat.persoon=3
+404	Pron(pers,1,plu)	pos=VNW, feat.getal=mv, feat.persoon=1
+405	Pron(pers,2,plu)	pos=VNW, feat.getal=mv, feat.persoon=2
+406	Pron(pers,3,plu)	pos=VNW, feat.getal=mv, feat.persoon=3
+410	Pron(dem)	pos=VNW, feat.vwtype=aanw
+411	Pron(dem,forme)	pos=VNW, feat.vwtype=aanw, feat.form=-e
+412	Pron(dem,forms)	pos=VNW, feat.vwtype=aanw, feat.form=-s/-th
+414	Pron(dem,formn)	pos=VNW, feat.vwtype=aanw, feat.form=-n
+415	Pron(dem,formr)	pos=VNW, feat.vwtype=aanw, feat.form=-r/-re
+420	Pron(rel)	pos=VNW, feat.vwtype=betr
+421	Pron(rel,forme)	pos=VNW, feat.vwtype=betr, feat.form=-e
+422	Pron(rel,forms)	pos=VNW, feat.vwtype=betr, feat.form=-s/-th
+424	Pron(rel,formn)	pos=VNW, feat.vwtype=betr, feat.form=-n
+425	Pron(rel,formr)	pos=VNW, feat.vwtype=betr, feat.form=-r/-re
+430	Pron(inter)	pos=VNW, feat.vwtype=vb
+431	Pron(inter,forme)	pos=VNW, feat.vwtype=vb, feat.form=-e
+432	Pron(inter,forms)	pos=VNW, feat.vwtype=vb, feat.form=-s/-th
+434	Pron(inter,formn)	pos=VNW, feat.vwtype=vb, feat.form=-n
+435	Pron(inter,formr)	pos=VNW, feat.vwtype=vb, feat.form=-r/-re
+438	Pron(inter,formrest)	pos=VNW, feat.vwtype=vb
+440	Pron(indef)	pos=VNW, feat.lwtype=onbep
+441	Pron(indef,forme)	pos=VNW, feat.vwtype=vb, feat.lwtype=onbep, feat.form=-e
+442	Pron(indef,forms)	pos=VNW, feat.vwtype=vb, feat.lwtype=onbep, feat.form=-s/-th
+444	Pron(indef,formn)	pos=VNW, feat.vwtype=vb, feat.lwtype=onbep, feat.form=-n
+445	Pron(indef,formr)	pos=VNW, feat.vwtype=vb, feat.lwtype=onbep, feat.form=-r/-re
+449	Pron(uncodeable)	pos=VNW, feat.vwtype=unknown, feat.lwtype=unknown, feat.form=unknown
+450	Pron(poss)	pos=VNW, feat.vwtype=bez
+451	Pron(poss,forme)	pos=VNW, feat.vwtype=bez, feat.form=-e
+452	Pron(poss,forms)	pos=VNW, feat.vwtype=bez, feat.form=-s/-th
+454	Pron(poss,formn)	pos=VNW, feat.vwtype=bez, feat.form=-n
+455	Pron(poss,formr)	pos=VNW, feat.vwtype=bez, feat.form=-r/-re
+456	Pron(poss,formao)	pos=VNW, feat.vwtype=bez, feat.form=-a
+458	Pron(poss,formrest)	pos=VNW, feat.vwtype=bez
+461	Pron(refl,1,sing)	pos=VNW, feat.vwtype=refl, feat.getal=ev, feat.persoon=1
+462	Pron(refl,2,sing)	pos=VNW, feat.vwtype=refl, feat.getal=ev, feat.persoon=2
+463	Pron(refl,3,sing)	pos=VNW, feat.vwtype=refl, feat.getal=ev, feat.persoon=3
+464	Pron(refl,1,plu)	pos=VNW, feat.vwtype=refl, feat.getal=mv, feat.persoon=1
+465	Pron(refl,2,plu)	pos=VNW, feat.vwtype=refl, feat.getal=mv, feat.persoon=2
+466	Pron(refl,3,plu)	pos=VNW, feat.vwtype=refl, feat.getal=mv, feat.persoon=3
+470	Art(def)	pos=LID
+471	Art(def,forme)	pos=LID, feat.form=-e
+472	Art(def,forms)	pos=LID, feat.form=-s/-th
+473	Art(def,formt)	pos=LID, feat.form=-t
+474	Art(def,formn)	pos=LID, feat.form=-n
+475	Art(def,formr)	pos=LID, feat.form=-r/-re
+480	Art(indef)	pos=LID
+481	Art(indef,forme)	pos=LID, feat.form=-e
+482	Art(indef,forms)	pos=LID, feat.form=-s/-th
+484	Art(indef,formn)	pos=LID, feat.form=-n
+485	Art(indef,formr)	pos=LID, feat.form=-r/-re
+500	Adv(gener)	pos=BW
+510	Adv(dem)	pos=BW
+520	Adv(rel)	pos=BW
+530	Adv(inter)	pos=BW
+540	Adv(indef)	pos=BW
+550	Adv(resum)	pos=BW
+560	Adv(neg)	pos=BW
+605	PronAdv(pers)	pos=BW, feat.form=-r/-re
+615	PronAdv(dem)	pos=BW, feat.form=-r/-re
+625	PronAdv(rel)	pos=BW, feat.form=-r/-re
+635	PronAdv(inter)	pos=BW, feat.form=-r/-re
+645	PronAdv(indef)	pos=BW, feat.form=-r/-re
+655	PronAdv(prep)	pos=BW, feat.form=-r/-re
+700	Adp()	pos=VZ
+800	Conj(coord)	pos=VG
+810	Conj(subord)	pos=VG
+820	Conj(comp)	pos=VG
+840	Conj(alse)	pos=VG
+910	Misc(latin)	
+920	Disc(latin)	
+999	Problem	feat.probleemgeval
+Punc(ldk)	Punc(gcomma)	
+Punc(ldp)	Punc(colon)	
+Punc(lk)	Punc(comma)	
+Punc(lp)	Punc(period)	
+Punc(ls)	Punc(hyph)	
+Punc(lsc)	Punc(semicolon)	
+Punc(lt)	Punc(tilde)	
+Punc(lv)	Punc(other)	
+Punc(lx)	Misc(unrdbl)	
