@@ -1,4 +1,4 @@
-Code	Vertaling	CQL
+code	pos	cql
 000	N(sing)	pos=N, feat.getal=ev
 001	N(sing,forme)	pos=N, feat.getal=ev, feat.form=-e
 002	N(sing,forms)	pos=N, feat.getal=ev, feat.form=-s/-th
@@ -7,6 +7,7 @@ Code	Vertaling	CQL
 005	N(sing,formr)	pos=N, feat.getal=ev, feat.form=-r/-re
 006	N(sing,formao)	pos=N, feat.getal=ev, feat.form=-a
 008	N(sing,formrest)	pos=N, feat.getal=ev
+009	N(unknown)	pos=N, feat.getal=unknown
 010	N(plu,formbase)	pos=N, feat.getal=mv
 011	N(plu,forme)	pos=N, feat.getal=mv, feat.form=-e
 012	N(plu,forms)	pos=N, feat.getal=mv, feat.form=-s/-th
@@ -14,32 +15,46 @@ Code	Vertaling	CQL
 015	N(plu,formr)	pos=N, feat.getal=mv, feat.form=-r/-re
 016	N(plu,formao)	pos=N, feat.getal=mv, feat.form=-a
 018	N(plu,formrest)	pos=N, feat.getal=mv
+019	N(unknown)	pos=N, feat.getal=unknown
 020	N(sing,prop)	pos=N, feat.ntype=eigen
 021	N(sing,prop,forme)	pos=N, feat.ntype=eigen, feat.form=-e
 022	N(sing,prop,forms)	pos=N, feat.ntype=eigen, feat.form=-s/-th
+023	N(unknown)	pos=N, feat.ntype=unknown, feat.form=unknown
 024	N(sing,prop,formn)	pos=N, feat.ntype=eigen, feat.form=-n
 025	N(sing,prop,formr)	pos=N, feat.ntype=eigen, feat.form=-r/-re
 026	N(sing,prop,formao)	pos=N, feat.ntype=eigen, feat.form=-a
 028	N(sing,prop,formrest)	pos=N, feat.ntype=eigen
+029	N(unknown)	pos=N, feat.ntype=unknown
 031	N(plu,prop,forme)	pos=N, feat.getal=mv, feat.ntype=eigen, feat.form=-e
-034	N(plu,prop,formn	pos=N, feat.getal=mv, feat.ntype=eigen, feat.form=-n
+034	N(plu,prop,formn)	pos=N, feat.getal=mv, feat.ntype=eigen, feat.form=-n
+046	N(unknown)	pos=N, feat.getal=unknown, feat.ntype=unknown, feat.form=unknown
+091	N(unknown)	pos=N, feat.getal=unknown, feat.ntype=unknown, feat.form=unknown
 100	Adj()	pos=ADJ, feat.getal=ev
 101	Adj(forme)	pos=ADJ, feat.getal=ev, feat.form=-e
 102	Adj(forms)	pos=ADJ, feat.getal=ev, feat.form=-s/-th
+103	Adj(unknown)	pos=ADJ, feat.getal=unknown, feat.form=unknown
 104	Adj(formn)	pos=ADJ, feat.getal=ev, feat.form=-n
 105	Adj(formr)	pos=ADJ, feat.getal=ev, feat.form=-r/-re
+109	Adj(unknown)	pos=ADJ, feat.getal=unknown, feat.form=unknown
+110	Adj(unknown)	pos=ADJ, feat.getal=unknown, feat.form=unknown
+111	Adj(unknown)	pos=ADJ, feat.getal=unknown, feat.form=unknown
+114	Adj(unknown)	pos=ADJ, feat.getal=unknown, feat.form=unknown
+115	Adj(unknown)	pos=ADJ, feat.getal=unknown, feat.form=unknown
+191	Adj(unknown)	pos=ADJ, feat.getal=unknown, feat.form=unknown
 200	V(fin,pres,lex)	pos=WW, feat.pvtijd=tgw
 201	V(fin,pres,lex,forme)	pos=WW, feat.pvtijd=tgw, feat.form=-e
+202	V(unknown)	pos=WW, feat.pvtijd=unknown, feat.form=unknown
 203	V(fin,pres,lex,formt)	pos=WW, feat.pvtijd=tgw, feat.form=-t
 204	V(fin,pres,lex,formn)	pos=WW, feat.pvtijd=tgw, feat.form=-n
 207	V(fin,pres,lex,formnt)	pos=WW, feat.pvtijd=tgw
+209	V(fin,pres,lex,unknown)	pos=WW, feat.pvtijd=unknown
 210	V(fin,pres,aux_cop)	pos=WW, feat.pvtijd=tgw
 211	V(fin,pres,aux_cop,forme)	pos=WW, feat.pvtijd=tgw, feat.form=-e
 212	V(fin,pres,aux_cop,forms)	pos=WW, feat.pvtijd=tgw, feat.form=-s/-th
 213	V(fin,pres,aux_cop,formt)	pos=WW, feat.pvtijd=tgw, feat.form=-t
 214	V(fin,pres,aux_cop,formn)	pos=WW, feat.pvtijd=tgw, feat.form=-n
 217	V(fin,pres,aux_cop,formnt)	pos=WW, feat.pvtijd=tgw
-219	V(uncodeable)	pos=WW, feat.pvtijd=unkown
+219	V(unknown)	pos=WW, feat.pvtijd=unknown
 220	V(fin,past,lex)	pos=WW, feat.pvtijd=verl
 221	V(fin,past,lex,forme)	pos=WW, feat.pvtijd=verl, feat.form=-e
 223	V(fin,past,lex,formt)	pos=WW, feat.pvtijd=verl, feat.form=-t
@@ -50,18 +65,26 @@ Code	Vertaling	CQL
 233	V(fin,past,aux_cop,formt)	pos=WW, feat.pvtijd=verl, feat.form=-t
 234	V(fin,past,aux_cop,formn)	pos=WW, feat.pvtijd=verl, feat.form=-n
 237	V(fin,past,aux_cop,formnt)	pos=WW, feat.pvtijd=verl
+239	V(fin,past,aux_cop,unknown)	pos=WW, feat.pvtijd=verl, feat.form=unknown
 240	V(imp)	pos=WW
 243	V(imp,formt)	pos=WW, feat.form=-t
 250	V(infin)	pos=WW, feat.wvorm=inf
 251	V(infin,forme)	pos=WW, feat.wvorm=inf, feat.form=-e
 252	V(infin,forms)	pos=WW, feat.wvorm=inf, feat.form=-s/-th
 254	V(infin,formn)	pos=WW, feat.wvorm=inf, feat.form=-n
+260	V(unknown)	pos=WW, feat.wvorm=unknown, feat.form=unknown
+261	V(unknown)	pos=WW, feat.wvorm=unknown, feat.form=unknown
+264	V(unknown)	pos=WW, feat.wvorm=unknown, feat.form=unknown
+270	V(unknown)	pos=WW, feat.form=unknown
 271	V(participle,pres,forme)	pos=WW, feat.form=-e
 272	V(participle,pres,forms)	pos=WW, feat.form=-s/-th
 273	V(participle,past,formt)	pos=WW, feat.form=-t
 274	V(participle,past,formn)	pos=WW, feat.form=-n
 275	V(participle,past,rest)	pos=WW, feat.form=-r/-re
+279	V(unknown)	pos=WW, feat.form=unknown
+283	V(unknown)	pos=WW, feat.form=unknown
 285	V(prtcl)	pos=WW, feat.form=-r/-re
+299	V(unknown)	pos=WW, feat.form=unknown
 300	Num(card)	pos=TW, feat.numtype=hoofd
 301	Num(card,forme)	pos=TW, feat.numtype=hoofd, feat.form=-e
 302	Num(card,forms)	pos=TW, feat.numtype=hoofd, feat.form=-s/-th
@@ -77,22 +100,29 @@ Code	Vertaling	CQL
 322	Num(indef,forms)	pos=TW, feat.form=-s/-th
 324	Num(indef,formn)	pos=TW, feat.form=-n
 325	Num(indef,formr)	pos=TW, feat.form=-r/-re
+329	Num(unknown)	pos=TW, feat.form=unknown
+373	Num(unknown)	pos=TW, feat.form=unknown
+399	Num(unknown)	pos=TW, feat.form=unknown
 401	Pron(pers,1,sing)	pos=VNW, feat.getal=ev, feat.persoon=1
 402	Pron(pers,2,sing)	pos=VNW, feat.getal=ev, feat.persoon=2
 403	Pron(pers,3,sing)	pos=VNW, feat.getal=ev, feat.persoon=3
 404	Pron(pers,1,plu)	pos=VNW, feat.getal=mv, feat.persoon=1
 405	Pron(pers,2,plu)	pos=VNW, feat.getal=mv, feat.persoon=2
 406	Pron(pers,3,plu)	pos=VNW, feat.getal=mv, feat.persoon=3
+409	Pron(unknown)	pos=VNW, feat.getal=unknown, feat.persoon=unknown
 410	Pron(dem)	pos=VNW, feat.vwtype=aanw
 411	Pron(dem,forme)	pos=VNW, feat.vwtype=aanw, feat.form=-e
 412	Pron(dem,forms)	pos=VNW, feat.vwtype=aanw, feat.form=-s/-th
+413	Pron(unknown)	pos=VNW, feat.vwtype=unknown, feat.form=unknown
 414	Pron(dem,formn)	pos=VNW, feat.vwtype=aanw, feat.form=-n
 415	Pron(dem,formr)	pos=VNW, feat.vwtype=aanw, feat.form=-r/-re
+419	Pron(unknown)	pos=VNW, feat.vwtype=unknown, feat.form=unknown
 420	Pron(rel)	pos=VNW, feat.vwtype=betr
 421	Pron(rel,forme)	pos=VNW, feat.vwtype=betr, feat.form=-e
 422	Pron(rel,forms)	pos=VNW, feat.vwtype=betr, feat.form=-s/-th
 424	Pron(rel,formn)	pos=VNW, feat.vwtype=betr, feat.form=-n
 425	Pron(rel,formr)	pos=VNW, feat.vwtype=betr, feat.form=-r/-re
+429	Pron(unknown)	pos=VNW, feat.vwtype=unknown, feat.form=unknown
 430	Pron(inter)	pos=VNW, feat.vwtype=vb
 431	Pron(inter,forme)	pos=VNW, feat.vwtype=vb, feat.form=-e
 432	Pron(inter,forms)	pos=VNW, feat.vwtype=vb, feat.form=-s/-th
@@ -104,7 +134,7 @@ Code	Vertaling	CQL
 442	Pron(indef,forms)	pos=VNW, feat.vwtype=vb, feat.lwtype=onbep, feat.form=-s/-th
 444	Pron(indef,formn)	pos=VNW, feat.vwtype=vb, feat.lwtype=onbep, feat.form=-n
 445	Pron(indef,formr)	pos=VNW, feat.vwtype=vb, feat.lwtype=onbep, feat.form=-r/-re
-449	Pron(uncodeable)	pos=VNW, feat.vwtype=unknown, feat.lwtype=unknown, feat.form=unknown
+449	Pron(unknown)	pos=VNW, feat.vwtype=unknown, feat.lwtype=unknown, feat.form=unknown
 450	Pron(poss)	pos=VNW, feat.vwtype=bez
 451	Pron(poss,forme)	pos=VNW, feat.vwtype=bez, feat.form=-e
 452	Pron(poss,forms)	pos=VNW, feat.vwtype=bez, feat.form=-s/-th
@@ -112,6 +142,7 @@ Code	Vertaling	CQL
 455	Pron(poss,formr)	pos=VNW, feat.vwtype=bez, feat.form=-r/-re
 456	Pron(poss,formao)	pos=VNW, feat.vwtype=bez, feat.form=-a
 458	Pron(poss,formrest)	pos=VNW, feat.vwtype=bez
+459	Pron(unknown)	pos=VNW, feat.vwtype=unknown
 461	Pron(refl,1,sing)	pos=VNW, feat.vwtype=refl, feat.getal=ev, feat.persoon=1
 462	Pron(refl,2,sing)	pos=VNW, feat.vwtype=refl, feat.getal=ev, feat.persoon=2
 463	Pron(refl,3,sing)	pos=VNW, feat.vwtype=refl, feat.getal=ev, feat.persoon=3
@@ -124,38 +155,88 @@ Code	Vertaling	CQL
 473	Art(def,formt)	pos=LID, feat.form=-t
 474	Art(def,formn)	pos=LID, feat.form=-n
 475	Art(def,formr)	pos=LID, feat.form=-r/-re
+479	Art(unknown)	pos=LID, feat.form=unknown
 480	Art(indef)	pos=LID
 481	Art(indef,forme)	pos=LID, feat.form=-e
 482	Art(indef,forms)	pos=LID, feat.form=-s/-th
+483	Art(unknown)	pos=LID, feat.form=unknown
 484	Art(indef,formn)	pos=LID, feat.form=-n
 485	Art(indef,formr)	pos=LID, feat.form=-r/-re
+499	Art(unknown)	pos=LID, feat.form=unknown
 500	Adv(gener)	pos=BW
+501	Adv(unknown)	pos=BW
+502	Adv(unknown)	pos=BW
+504	Adv(unknown)	pos=BW
+505	Adv(unknown)	pos=BW
+509	Adv(unknown)	pos=BW
 510	Adv(dem)	pos=BW
+511	Adv(unknown)	pos=BW
+519	Adv(unknown)	pos=BW
 520	Adv(rel)	pos=BW
+521	Adv(unknown)	pos=BW
+524	Adv(unknown)	pos=BW
 530	Adv(inter)	pos=BW
 540	Adv(indef)	pos=BW
 550	Adv(resum)	pos=BW
+551	Adv(unknown)	pos=BW
 560	Adv(neg)	pos=BW
+590	Adv(unknown)	pos=BW
+600	PronAdv(unknown)	pos=BW, feat.form=unknown
+601	PronAdv(unknown)	pos=BW, feat.form=unknown
+604	PronAdv(unknown)	pos=BW, feat.form=unknown
 605	PronAdv(pers)	pos=BW, feat.form=-r/-re
+610	PronAdv(unknown)	pos=BW, feat.form=unknown
+611	PronAdv(unknown)	pos=BW, feat.form=unknown
+614	PronAdv(unknown)	pos=BW, feat.form=unknown
 615	PronAdv(dem)	pos=BW, feat.form=-r/-re
+620	PronAdv(unknown)	pos=BW, feat.form=unknown
+621	PronAdv(unknown)	pos=BW, feat.form=unknown
 625	PronAdv(rel)	pos=BW, feat.form=-r/-re
+630	PronAdv(unknown)	pos=BW, feat.form=unknown
 635	PronAdv(inter)	pos=BW, feat.form=-r/-re
+641	PronAdv(unknown)	pos=BW, feat.form=unknown
 645	PronAdv(indef)	pos=BW, feat.form=-r/-re
 655	PronAdv(prep)	pos=BW, feat.form=-r/-re
+690	PronAdv(unknown)	pos=BW, feat.form=unknown
 700	Adp()	pos=VZ
+701	Adp(unknown)	pos=VZ
+703	Adp(unknown)	pos=VZ
+704	Adp(unknown)	pos=VZ
+709	Adp(unknown)	pos=VZ
+742	Adp(unknown)	pos=VZ
+770	Adp(unknown)	pos=VZ
+799	Adp(unknown)	pos=VZ
 800	Conj(coord)	pos=VG
+801	Conj(unknown)	pos=VG
 810	Conj(subord)	pos=VG
+811	Conj(unknown)	pos=VG
 820	Conj(comp)	pos=VG
+821	Conj(unknown)	pos=VG
+830	Conj(unknown)	pos=VG
+834	Conj(unknown)	pos=VG
 840	Conj(alse)	pos=VG
-910	Misc(latin)	
+841	Conj(unknown)	pos=VG
+850	Conj(unknown)	pos=VG
+860	Conj(unknown)	pos=VG
+871	Conj(unknown)	pos=VG
+880	Conj(unknown)	pos=VG
+890	Conj(unknown)	pos=VG
+900	Misc(latin)	~
+909	Misc(unknown)	~
+910	Misc(latin)	~
 920	Disc(latin)	
-999	Problem	feat.probleemgeval
-Punc(ldk)	Punc(gcomma)	
-Punc(ldp)	Punc(colon)	
-Punc(lk)	Punc(comma)	
-Punc(lp)	Punc(period)	
-Punc(ls)	Punc(hyph)	
-Punc(lsc)	Punc(semicolon)	
-Punc(lt)	Punc(tilde)	
-Punc(lv)	Punc(other)	
-Punc(lx)	Misc(unrdbl)	
+999	Problem	pos=unknown feat.form=unknown
+Punc(ldk)	Punc(gcomma)	~
+Punc(ldp)	Punc(colon)	~
+Punc(lk)	Punc(comma)	~
+Punc(lp)	Punc(period)	~
+Punc(lpk)	Punc(unknown)	~
+Punc(ls)	Punc(hyph)	~
+Punc(lsc)	Punc(semicolon)	~
+Punc(lt)	Punc(tilde)	~
+Punc(lv)	Punc(other)	~
+Punc(lx)	Misc(unrdbl)	~
+Markup(sep)	Markup(sep)	~
+Markup(sic)	Markup(sic)	~
+Markup(line)	Markup(line)	~
+Markup(com)	Markup(com)	~
