@@ -47,7 +47,7 @@ code	pos	cql
 203	V(fin,pres,lex,formt)	pos=WW, feat.pvtijd=tgw, feat.form=-t
 204	V(fin,pres,lex,formn)	pos=WW, feat.pvtijd=tgw, feat.form=-n
 207	V(fin,pres,lex,formnt)	pos=WW, feat.pvtijd=tgw
-209	V(fin,pres,lex,unknown)	pos=WW, feat.pvtijd=unknown
+209	V(unknown)	pos=WW, feat.pvtijd=unknown
 210	V(fin,pres,aux_cop)	pos=WW, feat.pvtijd=tgw
 211	V(fin,pres,aux_cop,forme)	pos=WW, feat.pvtijd=tgw, feat.form=-e
 212	V(fin,pres,aux_cop,forms)	pos=WW, feat.pvtijd=tgw, feat.form=-s/-th
@@ -65,7 +65,7 @@ code	pos	cql
 233	V(fin,past,aux_cop,formt)	pos=WW, feat.pvtijd=verl, feat.form=-t
 234	V(fin,past,aux_cop,formn)	pos=WW, feat.pvtijd=verl, feat.form=-n
 237	V(fin,past,aux_cop,formnt)	pos=WW, feat.pvtijd=verl
-239	V(fin,past,aux_cop,unknown)	pos=WW, feat.pvtijd=verl, feat.form=unknown
+239	V(unknown)	pos=WW, feat.pvtijd=unknown, feat.form=unknown
 240	V(imp)	pos=WW
 243	V(imp,formt)	pos=WW, feat.form=-t
 250	V(infin)	pos=WW, feat.wvorm=inf

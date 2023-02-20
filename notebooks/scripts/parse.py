@@ -49,13 +49,13 @@ def read_code_scheme(code_scheme_file: str):
             return code_scheme
 
 
-def map_sent_sign(sent_sign: str) -> Union[str, None]:
+def map_sent_sign(line: Dict[str, any], sent_sign: str) -> Union[str, None]:
     if sent_sign == '-':
         return None
     if len(sent_sign) == 2 and sent_sign[0].isdigit():
         sent_sign = sent_sign[0]
     if sent_sign.isdigit() is False:
-        raise TypeError(f"invalid sent_sign type #{sent_sign}#")
+        raise TypeError(f"WARNING {line['num']} - invalid sent_sign type #{sent_sign}#")
     sent_sign = int(sent_sign)
     if sent_sign == 1:
         return 'start_main_sent'
@@ -75,18 +75,19 @@ def get_digits(code: str) -> str:
     return ''.join([char for char in code if char.isdigit()])
 
 
-def map_pos_code(pos_code: str, code_scheme: Dict[str, Dict[str, str]]) -> Tuple[str, Union[str, None]]:
+def map_pos_code(line: Dict[str, any], pos_code: str,
+                 code_scheme: Dict[str, Dict[str, str]]) -> Tuple[str, Union[str, None]]:
     if pos_code[0].isalpha() and pos_code[0].islower():
         # print(f'Changing pos_code {pos_code} to title case')
         pos_code = f'{pos_code[0].upper()}{pos_code[1:]}'
     if re.match(r'[A-Z]\w+\(\w+\).+', pos_code):
-        print(f'Removing trailing characters from pos_code {pos_code}')
+        print(f'WARNING line {line["num"]} - Removing trailing characters from pos_code {pos_code}')
         pos_code = re.sub(r'\).*', r')', pos_code)
     if pos_code[0] == 'X':
-        print(f'Removing X from pos_code {pos_code}')
+        print(f'WARNING line {line["num"]} - Removing X from pos_code {pos_code}')
         pos_code = pos_code[1:]
     elif len(pos_code) == 2:
-        print(f'Adding missing digit 9 to pos_code {pos_code}')
+        print(f'WARNING line {line["num"]} - Adding missing digit 9 to pos_code {pos_code}')
         pos_code = f'{pos_code}9'
     elif len(pos_code) > 3 and len(get_digits(pos_code)) == 3:
         # print(f'Removing non-digit from pos_code {pos_code}')
@@ -94,14 +95,14 @@ def map_pos_code(pos_code: str, code_scheme: Dict[str, Dict[str, str]]) -> Tuple
     if '+' in pos_code:
         pos_code = re.sub(r'\++', r'+', pos_code)
         code_parts = pos_code.split('+')
-        pos, cql = zip(*[map_pos_code(code_part, code_scheme) for code_part in code_parts])
+        pos, cql = zip(*[map_pos_code(line, code_part, code_scheme) for code_part in code_parts])
         # print(pos_code, pos, cql)
         return pos, cql
     if pos_code.isdigit() and len(pos_code) != 3:
-        print(f'Changing invalid pos_code {pos_code} to 999')
+        print(f'WARNING line {line["num"]} - Changing invalid pos_code {pos_code} to 999')
         pos_code = '999'
     elif pos_code.isalpha() and len(pos_code) > 4:
-        print(f'Changing invalid pos_code {pos_code} to 999')
+        print(f'WARNING line {line["num"]} - Changing invalid pos_code {pos_code} to 999')
         pos_code = '999'
     pos, cql = None, None
     if pos_code in code_scheme:
@@ -111,39 +112,39 @@ def map_pos_code(pos_code: str, code_scheme: Dict[str, Dict[str, str]]) -> Tuple
         pos = 'Punc(unknown)'
         cql = 'Punc(unknown)'
     else:
-        print(f'Changing invalid pos_code {pos_code} to 999')
+        print(f'WARNING line {line["num"]} - Changing invalid pos_code {pos_code} to 999')
         pos_code = '999'
         pos = code_scheme[pos_code]['pos']
         cql = code_scheme[pos_code]['cql']
     if pos is None or cql is None:
-        raise ValueError(f'unknown pos_code: {pos_code}')
+        raise ValueError(f'ERROR line {line["num"]} - unknown pos_code: {pos_code}')
     else:
         return pos, cql
 
 
-def parse_token_line(line: str, code_scheme):
-    if len(line.split(' ')) == 9 and line.startswith('@ @ @ '):
-        print(f'Removing @ from line {line}')
-        line = line[2:]
-    if len(line.split(' ')) == 5:
-        orig, lower, full, lemma, pos_code = line.split(' ')
+def parse_token_line(line: Dict[str, any], code_scheme):
+    if len(line['text'].split(' ')) == 9 and line['text'].startswith('@ @ @ '):
+        print(f'WARNING line {line["num"]} - Removing @ from line {line["text"]}')
+        line['text'] = line['text'][2:]
+    if len(line['text'].split(' ')) == 5:
+        orig, lower, full, lemma, pos_code = line['text'].split(' ')
         if lemma.isalpha() and pos_code.isdigit():
-            print(f'Assume missing fields 6, 7, 8, add - - - in line {line}')
-            line = f'{line} - - -'
-    if len(line.split(' ')) == 7:
-        orig, lower, full, lemma, pos_code, field6, field7 = line.split(' ')
+            print(f'WARNING line {line["num"]} - Assume missing fields 6, 7, 8, add - - - in line {line["text"]}')
+            line["text"] = f'{line["text"]} - - -'
+    if len(line["text"].split(' ')) == 7:
+        orig, lower, full, lemma, pos_code, field6, field7 = line["text"].split(' ')
         if pos_code.isdigit() and field6 == '-' and field7 == '-':
-            print(f'Adding sent_sign field to line {line}')
-            line = f'{line} -'
+            print(f'WARNING line {line["num"]} - Adding sent_sign field to line {line["text"]}')
+            line["text"] = f'{line["text"]} -'
         elif pos_code.isdigit() and field6 == '-' and field7.isdigit():
-            print(f'Adding field 7 - to line {line}')
-            line = f'{orig} {lower} {full} {lemma} {pos_code} {field6} - {field7}'
+            print(f'WARNING line {line["num"]} - Adding field 7 - to line {line["text"]}')
+            line["text"] = f'{orig} {lower} {full} {lemma} {pos_code} {field6} - {field7}'
         elif pos_code == '-' or pos_code == '???':
-            line = f'{orig} {lower} {full} {lemma} 999 {pos_code} {field6} {field7}'
-            print(f'Inserting unknown POS 999 to line {line}')
-    if len(line.split(' ')) != 8:
-        raise ValueError(f"unexpected number of elements in line: #{line}#")
-    fields = line.split(' ')
+            print(f'WARNING line {line["num"]} - Inserting unknown POS 999 to line {line["text"]}')
+            line["text"] = f'{orig} {lower} {full} {lemma} 999 {pos_code} {field6} {field7}'
+    if len(line["text"].split(' ')) != 8:
+        raise ValueError(f"ERROR line {line['num']} - unexpected number of elements in line #{line['text']}#")
+    fields = line["text"].split(' ')
     orig, lower, full, lemma, pos_code, field6, field7, sent_sign = fields
     if field6 != '-':
         # print('field 6:', field6)
@@ -153,15 +154,15 @@ def parse_token_line(line: str, code_scheme):
         pass
     if pos_code == '-' or pos_code == '???':
         pos_code = '999'
-        print(f'Inserting unknown POS 999 to line {line}')
+        print(f'WARNING line {line["num"]} - Inserting unknown POS 999 to line["text"] {line["text"]}')
     try:
-        pos, cql = map_pos_code(pos_code, code_scheme)
+        pos, cql = map_pos_code(line, pos_code, code_scheme)
     except ValueError:
         raise
     try:
-        sent_sign = map_sent_sign(sent_sign)
+        sent_sign = map_sent_sign(line, sent_sign)
     except TypeError:
-        print(line)
+        print(f'WARNING line {line["num"]} - {line["text"]}')
         raise
     token = {
         'orig': orig,
@@ -190,23 +191,23 @@ def read_docs(fname: str) -> Generator[List[Dict[str, any]], None, None]:
                 line = re.sub(' +', ' ', line)
             # print(li, len(line), f'#{line}#')
             if line.startswith('_n:'):
-                print(f'skipping line {line}')
+                print(f'WARNING line {li+1} - skipping line {line}')
                 continue
             if re.match('@ @ @ _[co]:', line) or re.match('_[co]:', line):
                 if len(doc_lines) > 0:
                     yield doc_lines
                 doc_lines = []
             # print('appending line', line)
-            doc_lines.append({'line_num': li+1, 'line': line.strip()})
+            doc_lines.append({'num': li+1, 'text': line.strip()})
         if len(doc_lines) > 0:
             yield doc_lines
 
 
-def parse_metadata_line(line: str):
+def parse_metadata_line(line: Dict[str, any]):
     # @ @ @ _o:I222p30601.RAAntwerpenStBernardHemiksem.Summarium113.VlpNr6 Markup(samp) - - -
-    if line.startswith('@ @ @'):
-        line = line.replace('@ @ @ ', '')
-    m = re.match(r'^(_[co]):(\S+) ', line)
+    if line['text'].startswith('@ @ @'):
+        line['text'] = line['text'].replace('@ @ @ ', '')
+    m = re.match(r'^(_[co]):(\S+) ', line['text'])
     doc_id_prefix = m.group(1)
     doc_id = m.group(2)
     if m := re.match(r'^([A-Z])(\d+)([a-zA-Z])(\d{3})(\d+)\.(.*)$', doc_id):
@@ -267,7 +268,7 @@ def parse_metadata_line(line: str):
         }
     else:
         print('doc_id:', doc_id)
-        raise ValueError(f'invalid metadata line: {line}')
+        raise ValueError(f'ERROR line {line["num"]} - invalid metadata line: {line["text"]}')
     metadata['doc_id_prefix'] = doc_id_prefix
     metadata['doc_id'] = f'{doc_id_prefix}_{doc_id}'
     return metadata
